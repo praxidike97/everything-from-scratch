@@ -10,4 +10,3 @@ class InputLayer():
         self.input = input
         self.output = input
         return np.asarray(self.output)
-
