@@ -2,6 +2,7 @@
 import numpy as np
 
 from NeuralLayer import NeuralLayer
+from InputLayer import InputLayer
 from error_functions import MSE
 from activation_functions import LogisticFunction
 
@@ -18,6 +19,7 @@ class NeuralNetwork:
         self.learning_rate = learning_rate
         self.layers = []
 
+        self.layers.append(InputLayer(list_layers[0]))
         for i in range(1, len(list_layers)):
             self.layers.append(NeuralLayer(list_layers[i], list_layers[i-1], activation_function, initial_weights='random'))
 
@@ -52,7 +54,7 @@ class NeuralNetwork:
             #print("Total error: " + str(error_total))
 
             # 2. Compute the error for the last layer
-            cost_derivative_final_layer = MSE.mse(self.layers[-1].output, y)
+            cost_derivative_final_layer = MSE.mse_derivative(self.layers[-1].output, y)
             activation_derivative_final_layer = LogisticFunction.logistic_function_derivative(self.layers[-1].summed_input)
             self.layers[-1].delta = np.multiply(cost_derivative_final_layer, activation_derivative_final_layer)
 
@@ -64,5 +66,8 @@ class NeuralNetwork:
 
             # 4. Change the weights and biases in all the layers according to the calculated delta
             for i in range(1, len(self.layers)):
-                self.layers[i].weights -= self.learning_rate*(np.dot(self.layers[i-1].output, self.layers[i].delta))
-                self.layers[i].weights -= self.learning_rate *self.layers[i].delta
+                output_last_layer = np.reshape(self.layers[i-1].output, (1, self.layers[i-1].output.shape[0]))
+                delta_current_layer = np.reshape(self.layers[i].delta, (self.layers[i].delta.shape[0], 1))
+
+                self.layers[i].weights -= self.learning_rate*(np.dot(delta_current_layer, output_last_layer))
+                self.layers[i].bias -= self.learning_rate *self.layers[i].delta

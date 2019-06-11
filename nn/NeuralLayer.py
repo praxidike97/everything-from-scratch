@@ -18,7 +18,8 @@ class NeuralLayer():
             self.bias = np.random.rand(number_neurons,)
 
     def calc_feed_forward(self, input):
-        self.summed_input = np.dot(self.weights, input) + self.bias
+        self.input = input
+        self.summed_input = np.dot(self.weights, self.input) + self.bias
         self.output = self.activation_function(self.summed_input)
         #output = []
         #for i, neuron in enumerate(self.neurons):
