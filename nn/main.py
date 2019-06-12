@@ -5,19 +5,20 @@ import random
 
 from NeuralNetwork import NeuralNetwork
 from activation_functions import LogisticFunction
+from data.data_utils import get_mnist_dataset
 
 def generate_training_examples():
     X = [[0, 1]]*25
-    y = [1]*25
+    y = [[0, 1]]*25
 
     X += [[1, 0]]*25
-    y += [1] * 25
+    y += [[1, 0]] * 25
 
-    X += [[0, 0]]*50
-    y += [0] * 50
+    X += [[0, 0]]*25
+    y += [[0,0]] * 25
 
     X += [[1, 1]]*25
-    y += [1] * 25
+    y += [[1,1]] * 25
 
     random.seed(4)
     random.shuffle(X)
@@ -26,16 +27,17 @@ def generate_training_examples():
 
     return np.asarray(X), np.asarray(y)
 
-episodes = range(0, 1000)
-X, y = generate_training_examples()
-print(X.shape)
-print(y.shape)
-net = NeuralNetwork([2, 1], LogisticFunction.logistic_function, 0.001)
+episodes = range(0, 50)
+#X, y = generate_training_examples()
+X_train, X_test, y_train, y_test = get_mnist_dataset()
+print(X_train[2])
+print(y_train[2])
+net = NeuralNetwork([784, 1024, 10], LogisticFunction.logistic_function, 0.001, batch_size=512)
 
 for e in tqdm(episodes):
-    net.train(X, y)
+    net.train(X_train, y_train)
 
-    error_total = net.calc_total_error(X[1], y[1])
+    error_total = net.calc_total_error(X_train[1], y_train[1])
     print("Total error: " + str(error_total))
 
 print(net.calc_feed_forward([0, 0]))
