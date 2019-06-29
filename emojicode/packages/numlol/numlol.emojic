@@ -1,0 +1,47 @@
+
+💭 equivalent to np.array.
+💭 But just for 1D and 2D Arrays!
+
+🌍 🐇 🍎 🍇
+   💭 The array itself
+  🖍 🆕  array 🍨🐚⚪🍆
+
+  💭 The shape of the array
+  🖍 🆕  array_shape 🍨🐚🔢🍆
+
+  🆕 🍼 array 🍨🐚⚪🍆🍇
+     🐽 array 0 ❗ ➡️ element
+     🔲 element 🍨🐚💯🍆 ➡️  optional_array
+
+     💭 Create empty list of type int
+     🆕🍨🐚🔢🍆🐸❗️ ➡️🖍 array_shape
+  🍉
+
+  💭 Getter for 'array'
+  ❗🍏 ➡️  🍨🐚⚪🍆 🍇
+      ↩️ array
+   🍉
+
+   💭 Getter for 'array_shape'
+   ❗🍐 ➡️  🍨🐚🔢🍆 🍇
+      ↩️ array_shape
+    🍉
+
+   💭 List to string
+    ❗ 🍌 ➡️ 🔡 🍇
+        💭 map function: parse all numbers in 'array' to String array
+        🐰 array 🍇 element ⚪ ➡️ 🔡  ↩️ 🍺 🔲 element 🔡  🍉 ❗ ➡️ new_list
+
+        💭 join all elements in String array to String
+        🆕 🔡 🍨 new_list 🔤,🔤 ❗ ➡️ my_string
+        
+        ↩️ 🍪 🔤[🔤 my_string 🔤]🔤 🍪
+     🍉
+
+
+   💭 Prints all elements in 'array'
+   ❗ 📠  🍇
+
+    🍉
+
+🍉
