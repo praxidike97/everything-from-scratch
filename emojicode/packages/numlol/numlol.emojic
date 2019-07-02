@@ -23,7 +23,6 @@
      💭 Append the number of elements of all embedded lists
      💭 to num_elements_embedded_lists
      🔂 element 🍡 array❗️🍇
-       💭 🍺🔲 element 🍨🐚💯🍆 ➡️ embedded_list
        🐻 num_elements_embedded_lists 🐔 element❗❗
      🍉
 
@@ -65,7 +64,7 @@
          🐻 array_shape_string dim ❗
        🍉
 
-       💭 join all elements in String array to String
+       💭 Join all elements in String array to String
        🆕 🔡 🍨 array_shape_string 🔤,🔤 ❗ ➡️ my_string
 
        ↩️ 🍪 🔤[🔤 my_string 🔤]🔤 🍪
@@ -84,7 +83,7 @@
           🐻 list_string 🔡 number 5❗❗
         🍉
 
-        💭 join all elements in String array to String
+        💭 Join all elements in String array to String
         🆕 🔡 🍨 list_string 🔤,🔤 ❗ ➡️ my_string
 
         💭 Add brackets to string representation
@@ -102,32 +101,54 @@
        💭 Iterate over all elements in 'array'
        💭 and use 🍌 method to print them
        🔂 element 🍡 array❗️🍇
-         💭 🍺🔲 element 🍨🐚💯🍆 ➡️ list
-         💭 🥝🐕 list❗ ➡️ new_list
          🍌🐕 element❗ ➡️ string_list
          😀 string_list ❗
        🍉
     🍉
 
-    💭 Calculate the Hadamard product of two arrays
-    🐇❗ 🍑  arr01🍎  arr02🍎 🍇
-       🍏 arr01❗ ➡️ array01
-       🍏 arr02❗ ➡️ array02
+   💭 Does element-wise operations of matrixes/vectors.
+   💭 The operation is defined in the callable.
+   🐇 ❗ 🍑 arr01🍎  arr02🍎  callable 🍇💯💯➡️💯🍉 ➡️ 🍎 🍇
+      🍏 arr01❗ ➡️ array01
+      🍏 arr02❗ ➡️ array02
 
-       🍐 arr01❗ ➡️ array_shape01
-       🍐 arr02❗ ➡️ array_shape02
+      🍐 arr01❗ ➡️ array_shape01
+      🍐 arr02❗ ➡️ array_shape02
 
-       💭 Return error in case the shapes of the two arrays are not equal
-       ↪️ ❎ 🐽 array_shape02 0❗ 🙌  🐽 array_shape01 0❗❗👐  ❎ 🐽 array_shape02 1❗ 🙌  🐽 array_shape01 1❗❗ 🍇
-         💭 🚨 🆕🚧🆕 🔤 Array shapes do not match!🔤❗️
-         😀 🔤 Wrong array shapes!🔤 ❗
-       🍉
+      💭 Return error in case the shapes of the two arrays are not equal
+      ↪️ ❎ 🐽 array_shape02 0❗ 🙌  🐽 array_shape01 0❗❗👐  ❎ 🐽 array_shape02 1❗ 🙌  🐽 array_shape01 1❗❗ 🍇
+        💭 🚨 🆕🚧🆕 🔤 Array shapes do not match!🔤❗️
+        😀 🔤 Wrong array shapes!🔤 ❗
+      🍉
 
-       🆕 ⏩⏩ 1 🐽 array_shape02 0❗ ❗ ➡️ 🖍  🆕 range_dim_01
-       🆕 ⏩⏩ 1 🐽 array_shape02 0❗ ❗ ➡️ 🖍  🆕 range_dim_01
+      💭 Create two ranges equal to the two dimensions
+      🆕 ⏩⏩ 0 🐽 array_shape02 1❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape02 0❗ ❗ ➡️  range_dim_02
 
-       📠 arr01❗
-       📠 arr02❗
-    🍉
+      💭 The list to store the result of the Hadamard operation
+      🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
+      🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  🆕 inner_array
+
+      🔂 dim01 🍡 range_dim_01❗️🍇
+         🔂 dim02 🍡 range_dim_02❗️🍇
+            ⁉️ callable 🐽 🐽  array01 dim01 ❗ dim02 ❗  🐽 🐽  array02 dim01 ❗ dim02 ❗ ❗➡️  product
+            🐻 inner_array product ❗
+         🍉
+         🐻 return_array inner_array ❗
+         🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  inner_array
+      🍉
+
+      ↩️ 🆕🍎🆕 return_array❗
+   🍉
+
+   💭 Element-wise multiplication (Hadamard product)
+   🐇 ❗🍈 arr01🍎  arr02🍎 ➡️ 🍎 🍇
+      ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01 ✖ number02 🍉 ❗
+   🍉
+
+   💭 Element-wise addition
+   🐇 ❗🍋 arr01🍎  arr02🍎 ➡️ 🍎 🍇
+       ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01➕ number02 🍉 ❗
+   🍉
 
 🍉
