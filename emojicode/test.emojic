@@ -8,12 +8,45 @@
    🆕🍎🆕 🍨 🍨 1.0 2.0 3.0 🍆
             🍨 5.0 5.0 6.0 🍆 🍆  ❗➡️ array02
 
+   😀 🔤 -----------------------------🔤 ❗
+   😀 🔤 Element-wise multiplication:🔤 ❗
    🍈 🐇🍎 array01 array02❗ ➡️ hadamard_array
    📠 hadamard_array ❗
-
    😀 🔤 -----------------------------🔤 ❗
 
+   😀 🔤 Element-wise addition:🔤 ❗
    🍋 🐇🍎 array01 array02❗ ➡️ addition_array
    📠 addition_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Element-wise subtraction:🔤 ❗
+   🍓 🐇🍎 array01 array02❗ ➡️ subtraction_array
+   📠 subtraction_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Element-wise constant addition:🔤 ❗
+   🥦 🐇🍎 array01 2.5❗ ➡️ constant_addition_array
+   📠 constant_addition_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Element-wise constant base:🔤 ❗
+   🥒 🐇🍎 array01 2❗ ➡️ constant_base_array
+   📠 constant_base_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Element-wise constant exponent:🔤 ❗
+   🥕 🐇🍎 array01 3❗ ➡️ constant_exponent_array
+   📠 constant_exponent_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Element-wise constant division:🔤 ❗
+   🌽 🐇🍎 array01 1❗ ➡️ constant_divide_array
+   📠 constant_divide_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Create matrix with random elements:🔤 ❗
+   🍠  🐇🍎 3 2 -1.0 1.0❗ ➡️ random_array
+   📠 random_array ❗
+   😀 🔤 -----------------------------🔤 ❗
 
 🍉

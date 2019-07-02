@@ -96,6 +96,35 @@
        ↩️ new_list
     🍉
 
+    💭 Creates matrix/vector of the given size with random values
+    💭 between low and high
+    🐇 ❗ 🍠 x01🔢  x02🔢 low💯 high💯 ➡️ 🍎 🍇
+
+       💭 Create two ranges equal to the two dimensions
+       🆕 ⏩⏩ 0 x02 ❗ ➡️  range_dim_01
+       🆕 ⏩⏩ 0 x01 ❗ ➡️  range_dim_02
+
+       💭 The list to store the result of the Hadamard operation
+       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
+       🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  🆕 inner_array
+
+       🆕🎰🆕 ❗➡️  random_generator
+       high ➖ low  ➡️ range
+
+       🔂 dim01 🍡 range_dim_01❗️🍇
+          🔂 dim02 🍡 range_dim_02❗️🍇
+             💯 random_generator ❗➡️  random_value_raw
+             random_value_raw ✖ range ➡️ random_value
+             random_value ➖ 1 ➡️ value
+             🐻 inner_array value❗
+          🍉
+          🐻 return_array inner_array ❗
+          🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  inner_array
+       🍉
+
+       ↩️ 🆕🍎🆕 return_array❗
+    🍉
+
    💭 Prints all elements in 'array'
    ❗ 📠  🍇
        💭 Iterate over all elements in 'array'
@@ -106,7 +135,7 @@
        🍉
     🍉
 
-   💭 Does element-wise operations of matrixes/vectors.
+   💭 Does element-wise operations of two matrixes/vectors.
    💭 The operation is defined in the callable.
    🐇 ❗ 🍑 arr01🍎  arr02🍎  callable 🍇💯💯➡️💯🍉 ➡️ 🍎 🍇
       🍏 arr01❗ ➡️ array01
@@ -125,7 +154,7 @@
       🆕 ⏩⏩ 0 🐽 array_shape02 1❗ ❗ ➡️  range_dim_01
       🆕 ⏩⏩ 0 🐽 array_shape02 0❗ ❗ ➡️  range_dim_02
 
-      💭 The list to store the result of the Hadamard operation
+      💭 The list to store the result of the operation
       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
       🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  🆕 inner_array
 
@@ -141,14 +170,66 @@
       ↩️ 🆕🍎🆕 return_array❗
    🍉
 
-   💭 Element-wise multiplication (Hadamard product)
+
+   💭 Does element-wise operations of one matrix/vector.
+   💭 The operation is defined in the callable.
+   🐇 ❗ 🍒 arr🍎  callable 🍇💯➡️💯🍉 ➡️ 🍎 🍇
+      🍏 arr❗ ➡️ array
+      🍐 arr❗ ➡️ array_shape
+
+      💭 Create two ranges equal to the two dimensions
+      🆕 ⏩⏩ 0 🐽 array_shape 1❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_02
+
+      💭 The list to store the result of the Hadamard operation
+      🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
+      🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  🆕 inner_array
+
+      🔂 dim01 🍡 range_dim_01❗️🍇
+         🔂 dim02 🍡 range_dim_02❗️🍇
+            ⁉️ callable 🐽 🐽  array dim01 ❗ dim02 ❗ ❗➡️  product
+            🐻 inner_array product ❗
+         🍉
+         🐻 return_array inner_array ❗
+         🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  inner_array
+      🍉
+
+      ↩️ 🆕🍎🆕 return_array❗
+   🍉
+
+   💭 Element-wise multiplication of two matrixes/vectors (Hadamard product)
    🐇 ❗🍈 arr01🍎  arr02🍎 ➡️ 🍎 🍇
       ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01 ✖ number02 🍉 ❗
    🍉
 
-   💭 Element-wise addition
+   💭 Element-wise addition of two matrixes/vectors
    🐇 ❗🍋 arr01🍎  arr02🍎 ➡️ 🍎 🍇
        ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01➕ number02 🍉 ❗
+   🍉
+
+   💭 Element-wise subtraction of two matrixes/vectors
+   🐇 ❗🍓 arr01🍎  arr02🍎 ➡️ 🍎 🍇
+       ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01➖ number02 🍉 ❗
+   🍉
+
+   💭 Element-wise addition of constant value
+   🐇 ❗🥦 array🍎 constant💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number➕ constant 🍉 ❗
+   🍉
+
+   💭 Base to the power of all elements in matrix/vector
+   🐇 ❗🥒 array🍎 base💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ 🏂 base number❗ 🍉 ❗
+   🍉
+
+   💭 All elements in matrix/vector to the power of exponent
+   🐇 ❗🥕 array🍎 exponent💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ 🏂 number exponent❗ 🍉 ❗
+   🍉
+
+   💭 Divide constant by all elements in matrix/vector
+   🐇 ❗🌽 array🍎 constant💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️  constant ➗ number 🍉 ❗
    🍉
 
 🍉
