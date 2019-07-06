@@ -1,3 +1,4 @@
+📦 files 🏠
 
 🌍 🐇 🍎 🍇
   🖍🆕 array 🍨🐚🍨🐚💯🍆🍆
@@ -15,10 +16,49 @@
   🔓❗️ 🥝 list 🍨🐚⚪️🍆 ➡️ 🍨🐚💯🍆
   🔓❗️ 📠 
   🐇 🔓❗️ 🍠 🛅 x01 🔢 🛅 x02 🔢 low 💯 high 💯 ➡️ 🍎
+  🐇 🔓❗️ 🍞 🛅 dim01 🔢 🛅 dim02 🔢 ➡️ 🍎
+  🐇 🔓❗️ 🌭 dim01 🔢 dim02 🔢 🛅 value 💯 arr 🍎 ➡️ 🍎
+  🥯 🐇 🔓❗️ 🗄 filePath 🔡 header 👌 ➡️ 🍎 🍇
+    ↪️ 📜 🕊📑 filePath❗ 🍇
+         💭 The new list where all read values are stores
+         🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️🖍 🆕 file_array
+
+         💭 Get length of file
+         🍺📏 🕊📑 filePath ❗ ➡️ length_file
+
+         💭 Read the whole file into a string
+         🍺🆕📄📜 filePath❗️ ➡️ readFile
+         🍺🔡 🍺📓readFile length_file❗️❗️➡️ file_string
+
+         💭 Split at 'new line'
+         🔫  file_string 🔤❌n🔤 ❗➡️ 🖍 🆕splitted_string_rows
+         🐼 splitted_string_rows❗
+
+         ↪️ header 🍇
+            🐨 splitted_string_rows 0❗
+         🍉
+
+         💭 Iterate over the splitted array
+         🔂 element 🆕🌱🐚🔡🍆🆕 splitted_string_rows❗️🍇
+            🔫  🍺element 🔤,🔤 ❗➡️ splitted_string_line
+            🐰 splitted_string_line 🍇 string_value 🔡 ➡️ 💯 ↩️  🍺💯 🔧string_value❗❗ 🍉 ❗ ➡️ splitted_string_line_number
+            🐻 file_array splitted_string_line_number❗
+         🍉
+
+         ↩️ 🆕🍎🆕 file_array❗
+
+      🍉
+      🙅 🍇
+         😀 🔤File does not exist or cannot be read!🔤❗️
+         ↩️ 🍞  🐇🍎 1 1❗
+      🍉
+   🍉
   🐇 🔓❗️ 🍑 arr01 🍎 arr02 🍎 callable 🍇💯💯➡️💯🍉 ➡️ 🍎
+  🐇 🔓❗️ 🥐 arr01 🍎 arr02 🍎 ➡️ 🍎
   🐇 🔓❗️ 🍒 arr 🍎 callable 🍇💯➡️💯🍉 ➡️ 🍎
+  🐇 🔓❗️ 🍔 arr 🍎 ➡️ 🍎
   🥯 🐇 🔓❗️ 🍈 arr01 🍎 arr02 🍎 ➡️ 🍎 🍇
-    ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01 ✖ number02 🍉 ❗
+    ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01✖️ number02 🍉 ❗
    🍉
   🥯 🐇 🔓❗️ 🍋 arr01 🍎 arr02 🍎 ➡️ 🍎 🍇
     ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01➕ number02 🍉 ❗

@@ -8,6 +8,16 @@
    🆕🍎🆕 🍨 🍨 1.0 2.0 3.0 🍆
             🍨 5.0 5.0 6.0 🍆 🍆  ❗➡️ array02
 
+   🆕🍎🆕 🍨 🍨 1.0 🍆
+            🍨 5.0 🍆
+            🍨 3.0 🍆🍆    ❗➡️ array03
+
+   🆕🍎🆕 🍨 🍨 1.0 3.0🍆
+            🍨 5.0 2.0🍆
+            🍨 3.0 1.0🍆🍆    ❗➡️ array04
+
+   😀 🍍 array01❗❗
+
    😀 🔤 -----------------------------🔤 ❗
    😀 🔤 Element-wise multiplication:🔤 ❗
    🍈 🐇🍎 array01 array02❗ ➡️ hadamard_array
@@ -47,6 +57,37 @@
    😀 🔤 Create matrix with random elements:🔤 ❗
    🍠  🐇🍎 3 2 -1.0 1.0❗ ➡️ random_array
    📠 random_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Create matrix with 0's:🔤 ❗
+   🍞  🐇🍎 4 2❗ ➡️ empty_array
+   📠 empty_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Change elements in array:🔤 ❗
+   🍞  🐇🍎 4 2❗ ➡️ empty_unchanged_array
+   🌭 🐇🍎 1 1 1.0 empty_unchanged_array❗ ➡️ changed_array
+   📠 changed_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Matrix/vector multiplication:🔤 ❗
+   🥐 🐇🍎 array01 array04❗ ➡️ result_array
+   📠 result_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Transpose matrix:🔤 ❗
+   🍔 🐇🍎 array04❗ ➡️ result_array02
+   📠 result_array02 ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Read vector/matrix from file:🔤 ❗
+   🗄 🐇🍎 🔤testfile.txt🔤 👍❗ ➡️ file_array
+   📠 file_array ❗
+
+   😀 🔤❌n🔤❗
+
+   🥐 🐇🍎 file_array array04❗ ➡️ new_file_array
+   📠 new_file_array ❗
    😀 🔤 -----------------------------🔤 ❗
 
 🍉

@@ -1,6 +1,7 @@
 
 💭 equivalent to np.array.
 💭 But just for 1D and 2D Arrays!
+📦 files 🏠
 
 🌍 🐇 🍎 🍇
    💭 The array itself
@@ -18,7 +19,7 @@
      🆕🍨🐚🔢🍆🐸❗️ ➡️🖍 🆕 num_elements_embedded_lists
 
      💭 Get the two array dimensions
-     🐔 array❗️ ➡️ array_shape_dim02
+     🐔 array❗️ ➡️ array_shape_dim01
 
      💭 Append the number of elements of all embedded lists
      💭 to num_elements_embedded_lists
@@ -28,8 +29,8 @@
 
      💭 Check if all numbers in num_elements_embedded_lists
      💭 are equal
-     🐽 num_elements_embedded_lists 0❗️ ➡️ array_shape_dim01
-     🐰 num_elements_embedded_lists 🍇 num_elements 🔢 ➡️ 👌 ↩️  array_shape_dim01 🙌 num_elements 🍉 ❗ ➡️ bool_list
+     🐽 num_elements_embedded_lists 0❗️ ➡️ array_shape_dim02
+     🐰 num_elements_embedded_lists 🍇 num_elements 🔢 ➡️ 👌 ↩️  array_shape_dim02 🙌 num_elements 🍉 ❗ ➡️ bool_list
      🐯  bool_list 🍇 bool_element 👌 ➡️ 👌 ↩️  bool_element 🙌 👍 🍉 ❗➡️ valid_array
 
      ↪️ valid_array 🍇
@@ -52,7 +53,7 @@
       ↩️ array_shape
     🍉
 
-   💭 Print 'array_shape'
+   💭 Get 'array_shape'
    ❗ 🍍 ➡️ 🔡 🍇
 
        💭 Create empty String array
@@ -101,8 +102,8 @@
     🐇 ❗ 🍠 x01🔢  x02🔢 low💯 high💯 ➡️ 🍎 🍇
 
        💭 Create two ranges equal to the two dimensions
-       🆕 ⏩⏩ 0 x02 ❗ ➡️  range_dim_01
-       🆕 ⏩⏩ 0 x01 ❗ ➡️  range_dim_02
+       🆕 ⏩⏩ 0 x01 ❗ ➡️  range_dim_01
+       🆕 ⏩⏩ 0 x02 ❗ ➡️  range_dim_02
 
        💭 The list to store the result of the Hadamard operation
        🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
@@ -125,6 +126,27 @@
        ↩️ 🆕🍎🆕 return_array❗
     🍉
 
+   💭 Creates matrix with 0's with the given dimensions
+   🐇❗ 🍞 dim01🔢 dim02🔢  ➡️ 🍎 🍇
+      🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕empty_array
+      🆕 ⏩⏩ 0 dim01 ❗ ➡️  range_dim_01
+
+      🔂 x01 🍡 range_dim_01❗️🍇
+         🐻 empty_array 🆕🍨🐚💯🍆🦊 0.0 dim02❗️❗
+      🍉
+      ↩️ 🆕🍎🆕 empty_array❗
+   🍉
+
+   💭 Sets the element at dim01 dim02 to given value
+   🐇 ❗ 🌭 dim01🔢 dim02🔢 value💯 arr🍎 ➡️ 🍎 🍇
+      🍏 arr❗ ➡️🖍  🆕array
+      🐽 array dim01❗ ➡️ 🖍  🆕inner_array
+      value ➡️ 🐽 inner_array dim02❗
+      inner_array ➡️ 🐽 array dim01❗
+
+      ↩️ 🆕🍎🆕 array❗
+   🍉
+
    💭 Prints all elements in 'array'
    ❗ 📠  🍇
        💭 Iterate over all elements in 'array'
@@ -134,6 +156,46 @@
          😀 string_list ❗
        🍉
     🍉
+
+   💭 Read vector/matrix from file
+   💭 If header is true the first line is skipped
+   🐇❗ 🗄 filePath🔡  header👌 ➡️ 🍎 🍇
+      💭 Check if file exists
+      ↪️ 📜 🕊📑 filePath❗ 🍇
+         💭 The new list where all read values are stores
+         🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️🖍 🆕 file_array
+
+         💭 Get length of file
+         🍺📏 🕊📑 filePath ❗ ➡️ length_file
+
+         💭 Read the whole file into a string
+         🍺🆕📄📜 filePath❗️ ➡️ readFile
+         🍺🔡 🍺📓readFile length_file❗️❗️➡️ file_string
+
+         💭 Split at 'new line'
+         🔫  file_string 🔤❌n🔤 ❗➡️ 🖍 🆕splitted_string_rows
+         🐼 splitted_string_rows❗
+
+         ↪️ header 🍇
+            🐨 splitted_string_rows 0❗
+         🍉
+
+         💭 Iterate over the splitted array
+         🔂 element 🆕🌱🐚🔡🍆🆕 splitted_string_rows❗️🍇
+            🔫  🍺element 🔤,🔤 ❗➡️ splitted_string_line
+            💭 Remove whitespaces from element and cast it to number
+            🐰 splitted_string_line 🍇 string_value 🔡 ➡️ 💯 ↩️  🍺💯 🔧string_value❗❗ 🍉 ❗ ➡️ splitted_string_line_number
+            🐻 file_array splitted_string_line_number❗
+         🍉
+
+         ↩️ 🆕🍎🆕 file_array❗
+
+      🍉
+      🙅 🍇
+         😀 🔤File does not exist or cannot be read!🔤❗️
+         ↩️ 🍞  🐇🍎 1 1❗
+      🍉
+   🍉
 
    💭 Does element-wise operations of two matrixes/vectors.
    💭 The operation is defined in the callable.
@@ -151,8 +213,8 @@
       🍉
 
       💭 Create two ranges equal to the two dimensions
-      🆕 ⏩⏩ 0 🐽 array_shape02 1❗ ❗ ➡️  range_dim_01
-      🆕 ⏩⏩ 0 🐽 array_shape02 0❗ ❗ ➡️  range_dim_02
+      🆕 ⏩⏩ 0 🐽 array_shape02 0❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape02 1❗ ❗ ➡️  range_dim_02
 
       💭 The list to store the result of the operation
       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
@@ -170,6 +232,41 @@
       ↩️ 🆕🍎🆕 return_array❗
    🍉
 
+   💭 Does vector-matrix/matrix-matrix multiplication
+   🐇 ❗ 🥐 arr01🍎  arr02🍎 ➡️ 🍎 🍇
+      🍏 arr01❗ ➡️ array01
+      🍏 arr02❗ ➡️ array02
+
+      🍐 arr01❗ ➡️ array_shape01
+      🍐 arr02❗ ➡️ array_shape02
+
+      💭 Return error in case the shapes of the two arrays are not equal
+      ↪️ ❎ 🐽 array_shape01 1❗ 🙌  🐽 array_shape02 0❗❗ 🍇
+        💭 🚨 🆕🚧🆕 🔤 Array shapes do not match!🔤❗️
+        😀 🔤 Wrong array shapes!🔤 ❗
+      🍉
+
+      💭 Create two ranges equal to the two dimensions
+      🆕 ⏩⏩ 0 🐽 array_shape01 0❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape02 1❗ ❗ ➡️  range_dim_02
+
+      💭 The list to store the result of the operation
+      🍞 🐇🍎 🐽 array_shape01 0❗ 🐽 array_shape02 1❗❗ ➡️ return_arr
+      🍏 return_arr❗ ➡️ 🖍 🆕return_array
+
+      🔂 i 🍡 range_dim_01❗️🍇
+         🔂 j 🍡 range_dim_02❗️🍇
+            🆕 ⏩⏩ 0 🐽 array_shape02 0❗❗ ➡️  range_dim_03
+            🔂 k 🍡 range_dim_03❗️🍇
+               🐽 🐽 array01 i❗ k❗✖️ 🐽 🐽 array02 k❗ j❗ ➡️ value
+               🐽 🐽 return_array i❗ j❗ ➕ value ➡️ 🐽 🐽 return_array i❗ j❗
+            🍉
+         🍉
+      🍉
+
+      ↩️ 🆕🍎🆕 return_array❗
+   🍉
+
 
    💭 Does element-wise operations of one matrix/vector.
    💭 The operation is defined in the callable.
@@ -178,8 +275,8 @@
       🍐 arr❗ ➡️ array_shape
 
       💭 Create two ranges equal to the two dimensions
-      🆕 ⏩⏩ 0 🐽 array_shape 1❗ ❗ ➡️  range_dim_01
-      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_02
+      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape 1❗ ❗ ➡️  range_dim_02
 
       💭 The list to store the result of the Hadamard operation
       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 return_array
@@ -197,9 +294,29 @@
       ↩️ 🆕🍎🆕 return_array❗
    🍉
 
+   💭 Return transposed matrix/vector
+   🐇 ❗🍔 arr🍎 ➡️ 🍎 🍇
+      🍏 arr❗ ➡️ array
+      🍐 arr❗ ➡️ array_shape
+
+      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape 1❗ ❗ ➡️  range_dim_02
+
+      🍞 🐇🍎 🐽 array_shape 1❗ 🐽 array_shape 0❗❗ ➡️ return_arr
+      🍏 return_arr❗ ➡️ 🖍 🆕return_array
+
+      🔂 i 🍡 range_dim_01❗️🍇
+         🔂 j 🍡 range_dim_02❗️🍇
+            🐽 🐽 array i❗ j❗ ➡️ 🐽 🐽 return_array j❗ i❗
+         🍉
+      🍉
+
+      ↩️ 🆕🍎🆕 return_array❗
+   🍉
+
    💭 Element-wise multiplication of two matrixes/vectors (Hadamard product)
    🐇 ❗🍈 arr01🍎  arr02🍎 ➡️ 🍎 🍇
-      ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01 ✖ number02 🍉 ❗
+      ↩️ 🍑 🐇🍎 arr01 arr02 🍇 number01💯 number02💯 ➡️ 💯 ↩️ number01✖️ number02 🍉 ❗
    🍉
 
    💭 Element-wise addition of two matrixes/vectors
