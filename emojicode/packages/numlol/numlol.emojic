@@ -71,7 +71,6 @@
        ↩️ 🍪 🔤[🔤 my_string 🔤]🔤 🍪
     🍉
 
-
    💭 List to string
     ❗ 🍌  list 🍨🐚💯🍆 ➡️ 🔡 🍇
 
@@ -81,7 +80,7 @@
         💭 Iterate over array_shape
         🔂 i 🆕🌱🐚💯🍆🆕 list❗️🍇
           🍺 i ➡️ number
-          🐻 list_string 🔡 number 5❗❗
+          🐻 list_string 📰 🐇🍎 number 5❗❗
         🍉
 
         💭 Join all elements in String array to String
@@ -92,10 +91,10 @@
      🍉
 
    💭 Converts 🍨🐚⚪🍆 to 🍨🐚💯🍆
-    ❗ 🥝 list 🍨🐚⚪🍆 ➡️ 🍨🐚💯🍆 🍇
-       🐰 list 🍇 element ⚪ ➡️ 💯  ↩️ 🍺 🔲 element 💯  🍉 ❗ ➡️ new_list
-       ↩️ new_list
-    🍉
+   💭 ❗ 🥝 list 🍨🐚⚪🍆 ➡️ 🍨🐚💯🍆 🍇
+   💭   🐰 list 🍇 element ⚪ ➡️ 💯  ↩️ 🍺 🔲 element 💯  🍉 ❗ ➡️ new_list
+   💭   ↩️ new_list
+   💭 🍉
 
     💭 Creates matrix/vector of the given size with random values
     💭 between low and high
@@ -115,11 +114,12 @@
        🔂 dim01 🍡 range_dim_01❗️🍇
           🔂 dim02 🍡 range_dim_02❗️🍇
              💯 random_generator ❗➡️  random_value_raw
-             random_value_raw ✖ range ➡️ random_value
-             random_value ➖ 1 ➡️ value
+             random_value_raw ✖️ range ➡️ random_value
+             random_value ➕ low ➡️ value
              🐻 inner_array value❗
           🍉
           🐻 return_array inner_array ❗
+
           🆕🍨🐚💯🍆🐸❗️ ➡️ 🖍  inner_array
        🍉
 
@@ -154,6 +154,17 @@
        🔂 element 🍡 array❗️🍇
          🍌🐕 element❗ ➡️ string_list
          😀 string_list ❗
+       🍉
+    🍉
+
+   💭 Transforms real number to string
+   💭 (because the emojicode method is broken)
+   🐇❗ 📰  number💯 precision🔢 ➡️ 🔡 🍇
+       ↪️ number ▶🙌 0.0 🍇
+          ↩️ 🔡 number precision❗
+       🍉
+       🙅🍇
+          ↩️ 🍪 🔤-🔤 🔡 🏧number❗ precision❗ 🍪
        🍉
     🍉
 
@@ -334,6 +345,11 @@
       ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number➕ constant 🍉 ❗
    🍉
 
+   💭 Element-wise multiplication of constant value
+   🐇 ❗🥝 array🍎 constant💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number✖️ constant 🍉 ❗
+   🍉
+
    💭 Base to the power of all elements in matrix/vector
    🐇 ❗🥒 array🍎 base💯 ➡️ 🍎 🍇
       ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ 🏂 base number❗ 🍉 ❗
@@ -348,6 +364,29 @@
    🐇 ❗🌽 array🍎 constant💯 ➡️ 🍎 🍇
       ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️  constant ➗ number 🍉 ❗
    🍉
-   
+
+   💭 The MSE function
+   🐇 ❗👬 output🍎 target🍎 ➡️ 🍎 🍇
+      ↩️ 🥝🐕 🥕🐕 🍓🐕 output target❗ 2.0❗ 0.5❗
+   🍉
+
+   💭 The derivative of the MSE function
+   🐇 ❗👭 output🍎 target🍎 ➡️ 🍎 🍇
+      ↩️ 🍓🐕 output target❗
+   🍉
+
+   💭 The logistic activation function
+   🐇 ❗📸 output🍎 ➡️ 🍎 🍇
+      🥝🐕 output 🔋1.0❗❗ ➡️ negative_output
+      ↩️ 🌽🐕 🥦🐕 🥒 🐕 negative_output 🛎 🕊💯❗❗ 1.0❗1.0❗
+   🍉
+
+   💭 The derivative of the logistic activation function
+   🐇 ❗📷 output🍎 ➡️ 🍎 🍇
+      📸🐕 output❗ ➡️ logistic_array
+      🥦🐕 🥝🐕 logistic_array 🔋1.0❗❗ 1.0❗ ➡️ value
+      ↩️ 🍈🐕 logistic_array value❗
+   🍉
+
 
 🍉
