@@ -2,11 +2,50 @@
 📦 numlol 🏠
 
 💭 Class for neural nets
+💭 Code for reference: https://github.com/pangolulu/neural-network-from-scratch
 🌍 🐇 🕸 🍇
 
+   💭 The weights of the different layers
+   🖍🆕 W 🍨🐚🍎🍆
 
+   💭 The biases of the different layers
+   🖍🆕 b 🍨🐚🍎🍆
 
+   💭 The dimensions of the various layers
+   🖍🆕 layers_dim 🍨🐚🔢🍆
 
+   🆕 🍼 layers_dim 🍨🐚🔢🍆 🍇
+
+      💭 Create empty lists for weights/biases
+      🆕🍨🐚🍎🍆🐸❗️ ➡️🖍 W
+      🆕🍨🐚🍎🍆🐸❗️ ➡️🖍 b
+
+      💭 Iterate over all layers and create random weights/biases
+      🆕 ⏩⏩ 0 🐔layers_dim❗ ❗ ➡️  range_layers
+      🔂 i 🍡 range_layers❗️🍇
+         💭 Create weights for layer
+         🔮 🐇🍎 🐽 layers_dim i❗ 🐽 layers_dim i➕1❗ -1.0 1.0❗ ➡️ random_W
+         💭 He initialisation
+         1.0 ➗ ⛷ 💯 🐽 layers_dim i❗❗❗ ➡️ he_factor
+         🐻 W 🥝 🐇🍎 random_W he_factor❗❗
+
+         💭 Create biases for layers
+         🔮 🐇🍎 1 🐽 layers_dim i➕1❗ -1.0 1.0❗ ➡️ random_b
+         🐻 b random_b❗
+      🍉
+   🍉
+
+    💭 Calculate loss ("Is this loss?")
+   ❗🦖 X🍎 y🍎 ➡️ 🍎 🍇
+      🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
+      X ➡️ input
+      y ➡️🖍 🆕output
+      🔂 i 🍡 range_W❗️🍇
+         🍋🐇🍎 🥐🐇🍎 🐽 W i❗ input❗ 🐽 b i❗❗ ➡️ raw_output
+         📸🐇🍎 raw_output❗ ➡️ 🖍output
+      🍉
+      ↩️ 👬🐇🍎 output y❗
+   🍉
 
 
 🍉

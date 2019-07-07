@@ -98,7 +98,7 @@
 
     💭 Creates matrix/vector of the given size with random values
     💭 between low and high
-    🐇 ❗ 🍠 x01🔢  x02🔢 low💯 high💯 ➡️ 🍎 🍇
+    🐇 ❗ 🔮 x01🔢  x02🔢 low💯 high💯 ➡️ 🍎 🍇
 
        💭 Create two ranges equal to the two dimensions
        🆕 ⏩⏩ 0 x01 ❗ ➡️  range_dim_01
