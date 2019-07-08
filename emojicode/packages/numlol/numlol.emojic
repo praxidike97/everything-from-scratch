@@ -147,6 +147,28 @@
       ↩️ 🆕🍎🆕 array❗
    🍉
 
+   💭 Return the maximum element in array
+   🐇❗ 🍕 arr🍎 ➡️ 💯 🍇
+
+      🍏 arr❗ ➡️ array
+      🍐 arr❗ ➡️ array_shape
+
+      🐽 🐽  array 0 ❗ 0 ❗ ➡️ 🖍  🆕value_max
+
+      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_01
+      🆕 ⏩⏩ 0 🐽 array_shape 1❗ ❗ ➡️  range_dim_02
+
+      🔂 dim01 🍡 range_dim_01❗️🍇
+         🔂 dim02 🍡 range_dim_02❗️🍇
+            ↪️ 🐽 🐽  array dim01 ❗ dim02 ❗ ▶ value_max 🍇
+               🐽 🐽  array dim01 ❗ dim02 ❗ ➡️ 🖍  value_max
+            🍉
+         🍉
+      🍉
+
+      ↩️  value_max
+   🍉
+
    💭 Prints all elements in 'array'
    ❗ 📠  🍇
        💭 Iterate over all elements in 'array'
@@ -323,6 +345,30 @@
       🍉
 
       ↩️ 🆕🍎🆕 return_array❗
+   🍉
+
+   💭 One-Hot encoding of vector
+   🐇 ❗🔥 arr🍎 ➡️ 🍎 🍇
+      🍏 arr❗ ➡️ array
+      🍐 arr❗ ➡️ array_shape
+
+      🆕🍨🐚🍨🐚💯🍆🍆 🐸❗ ➡️ 🖍 🆕one_hot_array
+      🍕🐕 arr❗ ➡️ max_value
+
+      💭 Just *vectors* can be one hot encoded!
+      ↪️ ❎ 🐽 array_shape 1❗ 🙌  1❗ 🍇
+        💭 🚨 🆕🚧🆕 🔤 Array shapes do not match!🔤❗️
+        😀 🔤 Wrong array shape! Just *vectors* can be one hot encoded! 🔤 ❗
+      🍉
+
+      🆕 ⏩⏩ 0 🐽 array_shape 0❗ ❗ ➡️  range_dim_01
+      🔂 i 🍡 range_dim_01❗️🍇
+         🐽 🐽  array i ❗ 0 ❗ ➡️  value
+         🌭🐕 0 🏇value❗ 1.0 🍞🐕 1 🏇max_value❗➕1❗❗ ➡️ encoded
+         🐻 one_hot_array 🐽 🍏encoded❗ 0❗ ❗
+      🍉
+
+      ↩️ 🆕🍎🆕 one_hot_array❗
    🍉
 
    💭 Element-wise multiplication of two matrixes/vectors (Hadamard product)

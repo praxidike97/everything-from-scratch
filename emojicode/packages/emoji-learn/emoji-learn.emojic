@@ -38,13 +38,23 @@
     💭 Calculate loss ("Is this loss?")
    ❗🦖 X🍎 y🍎 ➡️ 🍎 🍇
       🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
-      X ➡️ input
-      y ➡️🖍 🆕output
+      X ➡️🖍 🆕 input
       🔂 i 🍡 range_W❗️🍇
          🍋🐇🍎 🥐🐇🍎 🐽 W i❗ input❗ 🐽 b i❗❗ ➡️ raw_output
-         📸🐇🍎 raw_output❗ ➡️ 🖍output
+         📸🐇🍎 raw_output❗ ➡️ 🖍input
       🍉
-      ↩️ 👬🐇🍎 output y❗
+      ↩️ 👬🐇🍎 input y❗
+   🍉
+
+   💭 Make prediction
+   ❗🦕 X🍎 ➡️ 🍎 🍇
+      🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
+      X ➡️🖍 🆕 input
+      🔂 i 🍡 range_W❗️🍇
+         🍋🐇🍎 🥐🐇🍎 🐽 W i❗ input❗ 🐽 b i❗❗ ➡️ raw_output
+         📸🐇🍎 raw_output❗ ➡️ 🖍input
+      🍉
+      ↩️ input
    🍉
 
 

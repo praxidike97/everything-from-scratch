@@ -64,7 +64,7 @@
    😀 🔤 -----------------------------🔤 ❗
 
    😀 🔤 Create matrix with random elements:🔤 ❗
-   🍠  🐇🍎 3 2 -1.0 1.0❗ ➡️ random_array
+   🔮  🐇🍎 3 2 -1.0 1.0❗ ➡️ random_array
    📠 random_array ❗
    😀 🔤 -----------------------------🔤 ❗
 
@@ -117,6 +117,20 @@
    😀 🔤 Calculate the derivative of the logistic activation function:🔤 ❗
    📷 🐇🍎 array06❗ ➡️ logistic_der_array
    📠 logistic_der_array ❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 Get max element in array:🔤 ❗
+   🍕 🐇🍎 array04❗ ➡️ max_element
+   😀 🔡 max_element 5❗❗
+   😀 🔤 -----------------------------🔤 ❗
+
+   😀 🔤 One hot encoding vector:🔤 ❗
+   📠 array03 ❗
+
+   😀 🔤❌n🔤❗
+
+   🔥 🐇🍎 array03❗ ➡️ one_hot_array
+   📠 one_hot_array ❗
    😀 🔤 -----------------------------🔤 ❗
 
 🍉
