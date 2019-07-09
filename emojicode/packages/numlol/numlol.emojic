@@ -190,6 +190,25 @@
        🍉
     🍉
 
+   💭 Implements 'reduce' for real numbers
+   🐇❗ 🐧 list🍨🐚💯🍆️  callable 🍇💯 💯➡️💯🍉 ➡️ 💯 🍇
+      list ➡️🖍  🆕my_list
+
+      🐽my_list 0❗️ ➡️🖍  🆕accumulator
+      🐨my_list 0❗️
+
+      🔂 element 🍡my_list❗ 🍇
+         ⁉️ callable accumulator element❗ ➡️🖍 accumulator
+      🍉
+
+      ↩️ accumulator
+   🍉
+
+   💭 Calculates sum of elements in list
+   🐇❗ 🐱 list🍨🐚💯🍆 ➡️ 💯 🍇
+      ↩️ 🐧🐕 list 🍇 number01💯 number02💯 ➡️ 💯 ↩️  number01 ➕ number02 🍉❗
+   🍉
+
    💭 Read vector/matrix from file
    💭 If header is true the first line is skipped
    🐇❗ 🗄 filePath🔡  header👌 ➡️ 🍎 🍇
@@ -369,6 +388,40 @@
       🍉
 
       ↩️ 🆕🍎🆕 one_hot_array❗
+   🍉
+
+   💭 Normalizes data in array
+   🐇 ❗🥙 arr🍎 axis🔢 ➡️ 🍎 🍇
+      🆕🍨🐚🍨🐚💯🍆🍆 🐸❗ ➡️ 🖍 🆕array
+      🆕🍨🐚🔢🍆 🐸❗ ➡️ 🖍 🆕array_shape
+
+      🆕🍨🐚🍨🐚💯🍆🍆 🐸❗ ➡️ 🖍 🆕normalised_array
+
+      💭 If array should be normalised along 1 axis
+      💭 transpose the array first to make things easier
+      ↪️ axis 🙌 1 🍇
+         🍏 🍔🐕 arr❗❗ ➡️🖍 array
+         🍐 🍔🐕 arr❗❗ ➡️🖍 array_shape
+      🍉
+      🙅‍‍ 🍇
+        🍏 arr❗ ➡️🖍 array
+        🍐 arr❗ ➡️🖍 array_shape
+      🍉
+
+      🔂 list 🍡 array❗️🍇
+         💭 Calculate the mean of every row
+         🐱🐕 list❗ ➡️ sum
+         sum ➗ 💯🐔 list❗❗ ➡️ mean
+
+         💭🐰 list 🍇 element 💯 ➡️ 💯 ↩️  🏂 element➖mean 2❗️ 🍉 ❗ ➡️ mse_array
+         🐰 🍨 1.0 3.0 5.0🍆 🍇 element 💯 ➡️ 💯 ↩️  🏂 element 2❗️ 🍉 ❗ ➡️ mse_array
+         💭🐱🐕 mse_array❗ ➗ 💯🐔 mse_array❗❗ ➡️ variance
+         💭⛷variance❗️ ➡️ deviation
+
+         💭🐻 normalised_array 🍨deviation🍆❗
+      🍉
+
+      ↩️ 🆕🍎🆕 normalised_array❗
    🍉
 
    💭 Element-wise multiplication of two matrixes/vectors (Hadamard product)
