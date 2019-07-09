@@ -413,15 +413,27 @@
          🐱🐕 list❗ ➡️ sum
          sum ➗ 💯🐔 list❗❗ ➡️ mean
 
-         💭🐰 list 🍇 element 💯 ➡️ 💯 ↩️  🏂 element➖mean 2❗️ 🍉 ❗ ➡️ mse_array
-         🐰 🍨 1.0 3.0 5.0🍆 🍇 element 💯 ➡️ 💯 ↩️  🏂 element 2❗️ 🍉 ❗ ➡️ mse_array
-         💭🐱🐕 mse_array❗ ➗ 💯🐔 mse_array❗❗ ➡️ variance
-         💭⛷variance❗️ ➡️ deviation
+         💭 Calculate the deviation
+         0.0 ➡️🖍 🆕summed_mse
+         🔂 element 🍡 list❗️🍇
+            summed_mse ➕ 🏂 element➖mean 2❗️ ➡️🖍 summed_mse
+         🍉
+         summed_mse ➗ 💯🐔 list❗❗ ➡️ variance
+         ⛷variance❗️ ➡️ deviation
 
-         💭🐻 normalised_array 🍨deviation🍆❗
+         💭 Normalise array
+         🆕🍎🆕 🍨list🍆❗ ➡️ list_array
+         🍊🐕 🍠🐕 list_array mean❗deviation❗ ➡️ normalised_list_array
+
+         🐻 normalised_array 🐽 🍏normalised_list_array❗ 0❗ ❗
       🍉
 
-      ↩️ 🆕🍎🆕 normalised_array❗
+      🆕🍎🆕 normalised_array❗ ➡️🖍 🆕return_array
+      ↪️ axis 🙌 1 🍇
+         🍔🐕 return_array❗ ➡️🖍 return_array
+      🍉
+
+      ↩️ return_array
    🍉
 
    💭 Element-wise multiplication of two matrixes/vectors (Hadamard product)
@@ -444,9 +456,19 @@
       ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number➕ constant 🍉 ❗
    🍉
 
+   💭 Element-wise substraction of constant value
+   🐇 ❗🍠 array🍎 constant💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number➖ constant 🍉 ❗
+   🍉
+
    💭 Element-wise multiplication of constant value
    🐇 ❗🥝 array🍎 constant💯 ➡️ 🍎 🍇
       ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number✖️ constant 🍉 ❗
+   🍉
+
+   💭 Element-wise division of constant value
+   🐇 ❗🍊 array🍎 constant💯 ➡️ 🍎 🍇
+      ↩️ 🍒 🐇🍎 array 🍇 number💯  ➡️ 💯 ↩️ number➗ constant 🍉 ❗
    🍉
 
    💭 Base to the power of all elements in matrix/vector
