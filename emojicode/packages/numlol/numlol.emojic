@@ -200,6 +200,29 @@
        🍉
     🍉
 
+    💭 Creates a new array, but only with all the
+    💭 rows specified in 'rows'
+    🐇❗🥗 arr🍎 rows 🍨🐚🔢🍆 ➡️ 🍎 🍇
+       🍏 arr❗ ➡️ array
+       🍐 arr❗ ➡️ array_shape
+
+       🆕 ⏩⏩ 0 🐔 array❗ ❗➡️  range_rows
+
+       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 new_array
+
+       🔂 row_index 🍡 range_rows❗️🍇
+          ↪️ 🐦 rows row_index❓🍇
+             🐻 new_array 🐽 array row_index❗❗
+          🍉
+       🍉
+       ↩️ 🆕🍎🆕 new_array❗
+    🍉
+
+    💭 Get number-th element of array
+    🐇❗🥫 arr🍎 number🔢 ➡️ 🍎 🍇
+       ↩️ 🆕🍎🆕 🍨🐽 🍏arr❗number❗🍆❗
+    🍉
+
    💭 Implements 'reduce' for real numbers
    🐇❗ 🐧 list🍨🐚💯🍆️  callable 🍇💯 💯➡️💯🍉 ➡️ 💯 🍇
       list ➡️🖍  🆕my_list
@@ -228,6 +251,17 @@
          🐽 list i❗➡️ 🐽 new_list 🐔 list❗️➖1➖i❗
       🍉
       ↩️ new_list
+   🍉
+
+   💭 Creates list [0,1,2,...,list_size-1]
+   🐇❗ 🐤 list_size 🔢 ➡️ 🍨🐚🔢🍆 🍇
+      🆕🍨🐚🔢🍆🐸❗️ ➡️ 🖍  🆕 list
+
+      🆕 ⏩⏩ 0 list_size ❗ ➡️  range_list
+      🔂 i 🍡 range_list❗️🍇
+         🐻 list i❗
+      🍉
+      ↩️ list
    🍉
 
    💭 Read vector/matrix from file

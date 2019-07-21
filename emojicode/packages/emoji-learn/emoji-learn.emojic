@@ -37,20 +37,20 @@
    ❗🦖 X🍎 y🍎 ➡️ 🍎 🍇
       🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
       X ➡️🖍 🆕 input
-      🍔🐇🍎 input❗ ➡️🖍 input
+      💭🍔🐇🍎 input❗ ➡️🖍 input
       🔂 i 🍡 range_W❗️🍇
          💭🥐🐇🍎 input🐽 W i❗❗ ➡️ test
          🍋🐇🍎 🥐🐇🍎 input 🐽 W i❗❗ 🐽 b i❗❗ ➡️ raw_output
          📸🐇🍎 raw_output❗ ➡️ 🖍input
       🍉
-      ↩️ 🍔🐇🍎 👬🐇🍎 input 🍔🐇🍎 y❗❗❗
+      ↩️ 🍔🐇🍎 👬🐇🍎 input y❗❗
    🍉
 
    💭 Make prediction
    ❗🦕 X🍎 ➡️ 🍎 🍇
       🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
       X ➡️🖍 🆕 input
-      🍔🐇🍎 input❗ ➡️🖍 input
+      💭🍔🐇🍎 input❗ ➡️🖍 input
       🔂 i 🍡 range_W❗️🍇
          🍋🐇🍎 🥐🐇🍎 input 🐽 W i❗❗ 🐽 b i❗❗ ➡️ raw_output
          📸🐇🍎 raw_output❗ ➡️ 🖍input
@@ -60,72 +60,110 @@
 
    💭 Train the net
    ❗🦄 X🍎 y🍎 epochs🔢 learning_rate💯 🍇
+      🍏 X❗ ➡️ X_array
+      🍏 y❗ ➡️ y_array
+      🆕🍎🆕🍨🐽 X_array 0❗🍆❗ ➡️🖍 🆕 input
 
-      X ➡️🖍 🆕 input
       🆕🍨🐚🦂🍆🐸❗️ ➡️🖍 🆕forward_values
 
       🆕 ⏩⏩ 0 epochs❗ ➡️  num_epochs
-      🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
+      🆕 ⏩⏩ 0 🐔 X_array❗❗ ➡️  num_samples
+      🆕 ⏩⏩ 0 🐔 W❗❗ ➡️  range_W
 
       🔂 e 🍡 num_epochs❗️🍇
          😀 🍪 🔤Epoche 🔤 🔡e 10❗🍪❗
 
-         X ➡️🖍 input
-         🍔🐇🍎 input❗ ➡️🖍 input
+         💭 Iterate over all samples
+         🔂 num_sample 🍡 num_samples❗️🍇
+           🆕🍎🆕🍨🐽 X_array num_sample❗🍆❗ ➡️🖍 input
+           💭🍔🐇🍎 input❗ ➡️🖍 input
 
-         🆕🍨🐚🦂🍆🐸❗️ ➡️🖍 forward_values
+           🆕🍨🐚🦂🍆🐸❗️ ➡️🖍 forward_values
 
-         🐻 forward_values 🆕🦂🆕 🍞🐇🍎 7 7❗ 🍞🐇🍎 7 7❗ input❗❗
+           🐻 forward_values 🆕🦂🆕 🍞🐇🍎 1 1❗ 🍞🐇🍎 1 1❗ input❗❗
 
-         🔂 i 🍡 range_W❗️🍇
-            🥐🐇🍎 input 🐽 W i❗❗ ➡️ mul
-            🍋🐇🍎 mul 🐽 b i❗❗ ➡️ add
-            📸🐇🍎 add❗ ➡️ 🖍input
+           🔂 i 🍡 range_W❗️🍇
+              🥐🐇🍎 input 🐽 W i❗❗ ➡️ mul
+              🍋🐇🍎 mul 🐽 b i❗❗ ➡️ add
+              📸🐇🍎 add❗ ➡️ 🖍input
 
-            🐻 forward_values 🆕🦂🆕 mul add input❗️❗️
-         🍉
+              🐻 forward_values 🆕🦂🆕 mul add input❗️❗️
+           🍉
 
-         💭 Calculate derivative of MSE
-         👭🐇🍎 🦎🐽 forward_values 🐔forward_values❗➖1❗❗🍔🐇🍎y❗❗ ➡️ 🖍 🆕dmse
+           💭 Calculate derivative of MSE
+           👭🐇🍎 🦎🐽 forward_values 🐔forward_values❗➖1❗❗🆕🍎🆕🍨🐽 y_array num_sample❗🍆❗❗ ➡️ 🖍 🆕dmse
 
-         🆕 ⏩⏩ 0 🐔forward_values❗ ❗ ➡️  layers
 
-         💭 Transform range to list and reverse
-         🆕🍨🐚🔢🍆🐸❗️ ➡️🖍 🆕layers_list
-         🔂 i 🍡 layers❗️🍇
-            🐻 layers_list i❗
-         🍉
+           🆕 ⏩⏩ 0 🐔layers_dim❗ ❗ ➡️  layers
 
-         🐨 layers_list 0❗
-         🐮🐇🍎 layers_list❗ ➡️ layers_reversed
+           💭 Transform range to list and reverse
+           🆕🍨🐚🔢🍆🐸❗️ ➡️🖍 🆕layers_list
+           🔂 i 🍡 layers❗️🍇
+              🐻 layers_list i❗
+           🍉
 
-         🔂 layer 🍡 layers_reversed❗️🍇
-            💭 Derivative of activation function
-            🍐📷🐇🍎 dmse❗❗➡️ dmse_array_shape
+           🐨 layers_list 0❗
+           🐮🐇🍎 layers_list❗ ➡️ layers_reversed
 
-            🍐 🐍🐽 forward_values layer❗❗❗ ➡️ forward_values_array_shape
+           💭😀🔤Layers reversed🔤❗
+           💭😀📠 🆕🍎🆕 🍨layers_reversed🍆❗❗❗
+           💭😀🔤---------------🔤❗
 
-            🍈🐇🍎 🐍🐽 forward_values layer❗❗ 📷🐇🍎 dmse❗ ❗ ➡️ dadd
+           🔂 layer 🍡 layers_reversed❗️🍇
+              💭 Derivative of activation function
+              🍐📷🐇🍎 dmse❗❗➡️ dmse_array_shape
 
-            💭 Backward pass add
-            🐠🐕 🐢🐽 forward_values layer❗❗ 🐽 b layer➖1❗ dadd❗ ➡️ back_add
-            🐬 back_add❗ ➡️ db
-            🦈 back_add❗ ➡️ dmul
+              🍐 🐍🐽 forward_values layer❗❗❗ ➡️ forward_values_array_shape
 
-            💭 Backward pass mul
-            🐡🐕 🐽 W layer➖1❗ 🦎🐽 forward_values layer➖1❗❗ dmul❗ ➡️  back_mul
-            🐬 back_mul❗ ➡️ dW
-            🦈 back_mul❗ ➡️ 🖍 dmse
+              🍈🐇🍎 📷🐇🍎 🐍🐽 forward_values layer❗❗❗ dmse❗ ➡️ dadd
 
-            💭 Gradient descent parameter update
-            🍓🐇🍎 🐽 b layer➖1❗ 🥝🐇🍎 db 🔋learning_rate❗❗❗ ➡️ 🐽 b layer➖1❗
-            🍓🐇🍎 🐽 W layer➖1❗ 🥝🐇🍎 dW 🔋learning_rate❗❗❗ ➡️ 🐽 W layer➖1❗
+              💭😀🔤dadd🔤❗
+              💭📠 dadd ❗
+
+              💭 Backward pass add
+              🐠🐕 🐢🐽 forward_values layer❗❗ 🐽 b layer➖1❗ dadd❗ ➡️ back_add
+              🐬 back_add❗ ➡️ db
+              🦈 back_add❗ ➡️ dmul
+
+              💭😀🔤dmul🔤❗
+              💭📠 dmul ❗
+
+              💭 Backward pass mul
+              🐡🐕 🐽 W layer➖1❗ 🦎🐽 forward_values layer➖1❗❗ dmul❗ ➡️  back_mul
+              🐬 back_mul❗ ➡️ dW
+              🦈 back_mul❗ ➡️ 🖍 dmse
+
+              💭 Gradient descent parameter update
+              💭😀🔤db: 🔤❗
+              💭📠 db❗
+              💭😀🔤b: 🔤❗
+              💭📠 🐽 b 1❗❗
+              💭😀🔤dW🔤❗
+              💭📠 dW ❗
+              💭😀🔤-----------🔤❗
+              💭😀🔤W 0🔤❗
+              💭📠 🐽 W 0❗❗
+              💭😀🔤-----------🔤❗
+              💭😀🔤W 1🔤❗
+              💭📠 🐽 W 1❗❗
+              💭😀🔤-----------🔤❗
+              💭😀🔤dmse: 🔤❗
+              💭📠 dmse❗
+              💭😀🔤-----------🔤❗
+              🍓🐇🍎 🐽 b layer➖1❗ 🥝🐇🍎 db learning_rate❗❗ ➡️ 🐽 b layer➖1❗
+              🍓🐇🍎 🐽 W layer➖1❗ 🥝🐇🍎 dW learning_rate❗❗ ➡️ 🐽 W layer➖1❗
+
+              💭😀🔤b: 🔤❗
+              💭📠 🐽 b 1❗❗
+           🍉
+
          🍉
 
          💭 Calculate loss after each epoch
-         🦖🐕 X y❗ ➡️ loss_array
+         🦖🐕 🆕🍎🆕🍨🐽 X_array 0❗🍆❗ 🆕🍎🆕🍨🐽 y_array 0❗🍆❗❗ ➡️ loss_array
          😀🔤MSE: 🔤❗
          📠 loss_array❗
+         😀🔤🔤❗
       🍉
    🍉
 
@@ -138,6 +176,14 @@
 
       🥐🐇🍎 🍔🐇🍎 X❗dZ❗ ➡️ dW
       🥐🐇🍎 dZ 🍔🐇🍎 W❗❗ ➡️ dX
+
+      💭😀🔤-----------🔤❗
+      💭😀🔤X: 🔤❗
+      💭📠 X❗
+
+      💭😀🔤-----------🔤❗
+      💭😀🔤dZ: 🔤❗
+      💭📠 dZ❗
 
       ↩️ 🆕🦑🆕 dW dX❗
    🍉
@@ -156,7 +202,32 @@
 
       ↩️ 🆕🦑🆕 db dX❗
    🍉
+
+   💭 Read data from file
+   💭 features --> scaled
+   💭 labels   --> one-hot encoded
+   💭 Returns value type with X and y
+   🐇❗ 🦋 filepath🔡  ➡️ 🦑🍇
+      🗄 🐇🍎 filepath 👍❗ ➡️ file_array
+      🍔🐇🍎 file_array❗ ➡️ transposed_array
+
+      🥗🐇🍎 transposed_array 🐤 🐇🍎 🐔🍏transposed_array❗❗➖1 ❗ ❗ ➡️ raw_X
+      🥗🐇🍎 transposed_array 🍨🐔🍏transposed_array❗❗➖1🍆❗ ➡️ raw_y
+
+      🍔🐇🍎 raw_X❗ ➡️ transposed_raw_X
+      🍔🐇🍎 raw_y❗ ➡️ transposed_raw_y
+
+      💭 Scale the features
+      🔥🐇🍎 transposed_raw_y❗ ➡️ one_hot_y
+
+      💭 One-hot encoding of labels
+      🥙🐇🍎 transposed_raw_X 1❗ ➡️ scaled_X
+
+      ↩️ 🆕🦑🆕 scaled_X one_hot_y❗
+   🍉
+
 🍉
+
 
 💭 Value type to hold values while training
 🕊 🦂 🍇

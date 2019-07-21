@@ -1,0 +1,74 @@
+
+📦 numlol 🏠
+📦 emoji-learn 🏠
+
+🏁 🍇
+
+  🆕🍎🆕 🍨 🍨 0.0 0.0 🍆
+           🍨 0.0 0.0 🍆
+           🍨 0.0 1.0 🍆
+           🍨 1.0 0.0 🍆
+           🍨 1.0 1.0 🍆🍆 ❗➡️ X
+
+  🆕🍎🆕 🍨 🍨 0.0 0.0 🍆🍆 ❗➡️ X_test01
+  🆕🍎🆕 🍨 🍨 0.0 1.0 🍆🍆 ❗➡️ X_test02
+
+
+
+  🆕🍎🆕 🍨 🍨 0.0🍆
+           🍨 0.0🍆
+           🍨 1.0🍆
+           🍨 1.0🍆
+           🍨 1.0🍆 🍆 ❗➡️ y
+
+  💭 Create simple net that emulates OR-Gate
+  💭🔜
+  🆕🕸🆕 🍨 2 5 1🍆 ❗➡️ neural_net
+
+  🍐y❗ ➡️ array_shape01
+  😀 🔡 🐽 array_shape01 0❗10❗❗
+  😀 🔡 🐽 array_shape01 1❗10❗❗
+
+  😀 🔤 Train the neural net:🔤 ❗
+  🦄 neural_net X y 5 0.1❗
+  😀 🔤 -----------------------------🔤 ❗
+
+  😀 🔤 Make prediction of trained neural net:🔤 ❗
+  📠 🦕 neural_net X_test01❗❗
+  😀 🔤 -----------------------------🔤 ❗
+
+  😀 🔤 Make prediction of trained neural net:🔤 ❗
+  📠 🦕 neural_net X_test02❗❗
+  😀 🔤 -----------------------------🔤 ❗ 🔚💭
+
+
+  💭 Create classifier for Iris dataset
+  🦋🐇🕸 🔤iris.csv🔤❗ ➡️ data
+  🐬 data❗ ➡️ X_iris
+  🦈 data❗ ➡️ y_iris
+
+  🍐y_iris❗ ➡️ array_shape
+  😀 🔡 🐽 array_shape 0❗10❗❗
+  😀 🔡 🐽 array_shape 1❗10❗❗
+
+  🆕🕸🆕 🍨 4 8 3🍆 ❗➡️ neural_net_iris
+
+  😀 🔤 Train the neural net:🔤 ❗
+  🦄 neural_net_iris X_iris y_iris 100 0.1❗
+  😀 🔤 -----------------------------🔤 ❗
+
+  💭 Make predictions
+
+  😀 🔤 Prediction sample class 0:🔤 ❗
+  📠 🦕 neural_net_iris 🥫🐇🍎 X_iris 0❗❗❗
+  😀 🔤 -----------------------------🔤 ❗
+
+  😀 🔤 Prediction sample class 1:🔤 ❗
+  📠 🦕 neural_net_iris 🥫🐇🍎 X_iris 78❗❗❗
+  😀 🔤 -----------------------------🔤 ❗
+
+  😀 🔤 Prediction sample class 2:🔤 ❗
+  📠 🦕 neural_net_iris 🥫🐇🍎 X_iris 141❗❗❗
+  😀 🔤 -----------------------------🔤 ❗
+
+🍉
