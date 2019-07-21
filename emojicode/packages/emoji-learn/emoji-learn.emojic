@@ -15,22 +15,20 @@
    🖍🆕 layers_dim 🍨🐚🔢🍆
 
    🆕 🍼 layers_dim 🍨🐚🔢🍆 🍇
-
       💭 Create empty lists for weights/biases
       🆕🍨🐚🍎🍆🐸❗️ ➡️🖍 W
       🆕🍨🐚🍎🍆🐸❗️ ➡️🖍 b
-
       💭 Iterate over all layers and create random weights/biases
-      🆕 ⏩⏩ 0 🐔layers_dim❗ ❗ ➡️  range_layers
+      🆕 ⏩⏩ 0 🐔layers_dim❗➖1 ❗ ➡️  range_layers
       🔂 i 🍡 range_layers❗️🍇
          💭 Create weights for layer
-         🔮 🐇🍎 🐽 layers_dim i❗ 🐽 layers_dim i➕1❗ -1.0 1.0❗ ➡️ random_W
+         🔮 🐇🍎 🐽 layers_dim i❗ 🐽 layers_dim i➕ 1❗ -1.0 1.0❗ ➡️ random_W
          💭 He initialisation
          1.0 ➗ ⛷ 💯 🐽 layers_dim i❗❗❗ ➡️ he_factor
          🐻 W 🥝 🐇🍎 random_W he_factor❗❗
 
          💭 Create biases for layers
-         🔮 🐇🍎 1 🐽 layers_dim i➕1❗ -1.0 1.0❗ ➡️ random_b
+         🔮 🐇🍎 1 🐽 layers_dim i➕1❗  -1.0 1.0❗ ➡️ random_b
          🐻 b random_b❗
       🍉
    🍉
@@ -39,23 +37,165 @@
    ❗🦖 X🍎 y🍎 ➡️ 🍎 🍇
       🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
       X ➡️🖍 🆕 input
+      🍔🐇🍎 input❗ ➡️🖍 input
       🔂 i 🍡 range_W❗️🍇
-         🍋🐇🍎 🥐🐇🍎 🐽 W i❗ input❗ 🐽 b i❗❗ ➡️ raw_output
+         💭🥐🐇🍎 input🐽 W i❗❗ ➡️ test
+         🍋🐇🍎 🥐🐇🍎 input 🐽 W i❗❗ 🐽 b i❗❗ ➡️ raw_output
          📸🐇🍎 raw_output❗ ➡️ 🖍input
       🍉
-      ↩️ 👬🐇🍎 input y❗
+      ↩️ 🍔🐇🍎 👬🐇🍎 input 🍔🐇🍎 y❗❗❗
    🍉
 
    💭 Make prediction
    ❗🦕 X🍎 ➡️ 🍎 🍇
       🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
       X ➡️🖍 🆕 input
+      🍔🐇🍎 input❗ ➡️🖍 input
       🔂 i 🍡 range_W❗️🍇
-         🍋🐇🍎 🥐🐇🍎 🐽 W i❗ input❗ 🐽 b i❗❗ ➡️ raw_output
+         🍋🐇🍎 🥐🐇🍎 input 🐽 W i❗❗ 🐽 b i❗❗ ➡️ raw_output
          📸🐇🍎 raw_output❗ ➡️ 🖍input
       🍉
-      ↩️ input
+      ↩️ 🍔🐇🍎 input❗
+   🍉
+
+   💭 Train the net
+   ❗🦄 X🍎 y🍎 epochs🔢 learning_rate💯 🍇
+
+      X ➡️🖍 🆕 input
+      🆕🍨🐚🦂🍆🐸❗️ ➡️🖍 🆕forward_values
+
+      🆕 ⏩⏩ 0 epochs❗ ➡️  num_epochs
+      🆕 ⏩⏩ 0 🐔 W❗ ❗ ➡️  range_W
+
+      🔂 e 🍡 num_epochs❗️🍇
+         😀 🍪 🔤Epoche 🔤 🔡e 10❗🍪❗
+
+         X ➡️🖍 input
+         🍔🐇🍎 input❗ ➡️🖍 input
+
+         🆕🍨🐚🦂🍆🐸❗️ ➡️🖍 forward_values
+
+         🐻 forward_values 🆕🦂🆕 🍞🐇🍎 7 7❗ 🍞🐇🍎 7 7❗ input❗❗
+
+         🔂 i 🍡 range_W❗️🍇
+            🥐🐇🍎 input 🐽 W i❗❗ ➡️ mul
+            🍋🐇🍎 mul 🐽 b i❗❗ ➡️ add
+            📸🐇🍎 add❗ ➡️ 🖍input
+
+            🐻 forward_values 🆕🦂🆕 mul add input❗️❗️
+         🍉
+
+         💭 Calculate derivative of MSE
+         👭🐇🍎 🦎🐽 forward_values 🐔forward_values❗➖1❗❗🍔🐇🍎y❗❗ ➡️ 🖍 🆕dmse
+
+         🆕 ⏩⏩ 0 🐔forward_values❗ ❗ ➡️  layers
+
+         💭 Transform range to list and reverse
+         🆕🍨🐚🔢🍆🐸❗️ ➡️🖍 🆕layers_list
+         🔂 i 🍡 layers❗️🍇
+            🐻 layers_list i❗
+         🍉
+
+         🐨 layers_list 0❗
+         🐮🐇🍎 layers_list❗ ➡️ layers_reversed
+
+         🔂 layer 🍡 layers_reversed❗️🍇
+            💭 Derivative of activation function
+            🍐📷🐇🍎 dmse❗❗➡️ dmse_array_shape
+
+            🍐 🐍🐽 forward_values layer❗❗❗ ➡️ forward_values_array_shape
+
+            🍈🐇🍎 🐍🐽 forward_values layer❗❗ 📷🐇🍎 dmse❗ ❗ ➡️ dadd
+
+            💭 Backward pass add
+            🐠🐕 🐢🐽 forward_values layer❗❗ 🐽 b layer➖1❗ dadd❗ ➡️ back_add
+            🐬 back_add❗ ➡️ db
+            🦈 back_add❗ ➡️ dmul
+
+            💭 Backward pass mul
+            🐡🐕 🐽 W layer➖1❗ 🦎🐽 forward_values layer➖1❗❗ dmul❗ ➡️  back_mul
+            🐬 back_mul❗ ➡️ dW
+            🦈 back_mul❗ ➡️ 🖍 dmse
+
+            💭 Gradient descent parameter update
+            🍓🐇🍎 🐽 b layer➖1❗ 🥝🐇🍎 db 🔋learning_rate❗❗❗ ➡️ 🐽 b layer➖1❗
+            🍓🐇🍎 🐽 W layer➖1❗ 🥝🐇🍎 dW 🔋learning_rate❗❗❗ ➡️ 🐽 W layer➖1❗
+         🍉
+
+         💭 Calculate loss after each epoch
+         🦖🐕 X y❗ ➡️ loss_array
+         😀🔤MSE: 🔤❗
+         📠 loss_array❗
+      🍉
    🍉
 
 
+   💭 Backward pass through multiply gate
+   ❗ 🐡 W🍎 X🍎 dZ🍎 ➡️ 🦑 🍇
+      🍐 W❗➡️ W_array_shape
+      🍐 X❗➡️ X_array_shape
+      🍐 dZ❗➡️ dZ_array_shape
+
+      🥐🐇🍎 🍔🐇🍎 X❗dZ❗ ➡️ dW
+      🥐🐇🍎 dZ 🍔🐇🍎 W❗❗ ➡️ dX
+
+      ↩️ 🆕🦑🆕 dW dX❗
+   🍉
+
+   💭 Backward pass through add gate
+   ❗ 🐠 X🍎 b🍎 dZ🍎 ➡️ 🦑 🍇
+      💭 Get array shapes
+      🍐 X❗ ➡️ array_shape_X
+      🍐 dZ❗ ➡️ array_shape_dZ
+
+      💭 Get array with 1's
+      🥪🐇🍎 🐽 array_shape_X 0❗ 🐽 array_shape_X 1❗❗ ➡️ one_like_X
+
+      🍈🐇🍎 dZ one_like_X❗ ➡️ dX
+      🥐🐇🍎 🥪🐇🍎 1 🐽 array_shape_dZ 0❗❗ dZ❗ ➡️ db
+
+      ↩️ 🆕🦑🆕 db dX❗
+   🍉
+🍉
+
+💭 Value type to hold values while training
+🕊 🦂 🍇
+  🖍🆕 mul 🍎
+  🖍🆕 add 🍎
+  🖍🆕 input 🍎
+
+   🆕 🍼 mul 🍎 🍼 add 🍎 🍼 input 🍎 🍇🍉
+
+   💭 Getter for 'mul'
+   ❗🐢 ➡️ 🍎 🍇
+      ↩️ mul
+    🍉
+
+   💭 Getter for 'add'
+   ❗🐍 ➡️ 🍎 🍇
+       ↩️ add
+     🍉
+
+   💭 Getter for 'input'
+    ❗🦎 ➡️ 🍎 🍇
+      ↩️ input
+    🍉
+🍉
+
+💭 Value type two hold two arrays
+🕊 🦑 🍇
+  🖍🆕 array01 🍎
+  🖍🆕 array02 🍎
+
+   🆕 🍼 array01 🍎 🍼 array02 🍎 🍇🍉
+
+   💭 Getter for 'array01'
+   ❗🐬 ➡️ 🍎 🍇
+      ↩️ array01
+    🍉
+
+   💭 Getter for 'array02'
+   ❗🦈 ➡️ 🍎 🍇
+       ↩️ array02
+    🍉
 🍉

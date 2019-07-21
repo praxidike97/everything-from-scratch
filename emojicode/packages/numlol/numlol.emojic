@@ -126,13 +126,23 @@
        ↩️ 🆕🍎🆕 return_array❗
     🍉
 
+    💭 Creates matrix with 1's with the given dimensions
+    🐇❗ 🥪 dim01🔢 dim02🔢  ➡️ 🍎 🍇
+      ↩️ 🍘🐇🍎 dim01 dim02 1.0❗
+    🍉
+
    💭 Creates matrix with 0's with the given dimensions
    🐇❗ 🍞 dim01🔢 dim02🔢  ➡️ 🍎 🍇
+      ↩️ 🍘🐇🍎 dim01 dim02 0.0❗
+   🍉
+
+   💭 Creates matrix with constant values with the given dimensions
+   🐇❗ 🍘 dim01🔢 dim02🔢 value💯 ➡️ 🍎 🍇
       🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕empty_array
       🆕 ⏩⏩ 0 dim01 ❗ ➡️  range_dim_01
 
       🔂 x01 🍡 range_dim_01❗️🍇
-         🐻 empty_array 🆕🍨🐚💯🍆🦊 0.0 dim02❗️❗
+         🐻 empty_array 🆕🍨🐚💯🍆🦊 value dim02❗️❗
       🍉
       ↩️ 🆕🍎🆕 empty_array❗
    🍉
@@ -207,6 +217,17 @@
    💭 Calculates sum of elements in list
    🐇❗ 🐱 list🍨🐚💯🍆 ➡️ 💯 🍇
       ↩️ 🐧🐕 list 🍇 number01💯 number02💯 ➡️ 💯 ↩️  number01 ➕ number02 🍉❗
+   🍉
+
+   💭 Reverse list
+   🐇❗ 🐮 list🍨🐚🔢🍆 ➡️ 🍨🐚🔢🍆 🍇
+      🆕🍨🐚🔢🍆🦊 0 🐔 list❗️❗️ ➡️🖍 🆕 new_list
+      🆕 ⏩⏩ 0 🐔 list❗️ ❗ ➡️  range_list
+
+      🔂 i 🍡 range_list❗️🍇
+         🐽 list i❗➡️ 🐽 new_list 🐔 list❗️➖1➖i❗
+      🍉
+      ↩️ new_list
    🍉
 
    💭 Read vector/matrix from file
@@ -296,6 +317,11 @@
       ↪️ ❎ 🐽 array_shape01 1❗ 🙌  🐽 array_shape02 0❗❗ 🍇
         💭 🚨 🆕🚧🆕 🔤 Array shapes do not match!🔤❗️
         😀 🔤 Wrong array shapes!🔤 ❗
+
+        😀 🔡 🐽 array_shape01 0❗10❗❗
+        😀 🔡 🐽 array_shape01 1❗10❗❗
+        😀 🔡 🐽 array_shape02 0❗10❗❗
+        😀 🔡 🐽 array_shape02 1❗10❗❗
       🍉
 
       💭 Create two ranges equal to the two dimensions
