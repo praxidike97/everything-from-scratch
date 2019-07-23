@@ -105,10 +105,6 @@
            🐨 layers_list 0❗
            🐮🐇🍎 layers_list❗ ➡️ layers_reversed
 
-           💭😀🔤Layers reversed🔤❗
-           💭😀📠 🆕🍎🆕 🍨layers_reversed🍆❗❗❗
-           💭😀🔤---------------🔤❗
-
            🔂 layer 🍡 layers_reversed❗️🍇
               💭 Derivative of activation function
               🍐📷🐇🍎 dmse❗❗➡️ dmse_array_shape
@@ -117,16 +113,10 @@
 
               🍈🐇🍎 📷🐇🍎 🐍🐽 forward_values layer❗❗❗ dmse❗ ➡️ dadd
 
-              💭😀🔤dadd🔤❗
-              💭📠 dadd ❗
-
               💭 Backward pass add
               🐠🐕 🐢🐽 forward_values layer❗❗ 🐽 b layer➖1❗ dadd❗ ➡️ back_add
               🐬 back_add❗ ➡️ db
               🦈 back_add❗ ➡️ dmul
-
-              💭😀🔤dmul🔤❗
-              💭📠 dmul ❗
 
               💭 Backward pass mul
               🐡🐕 🐽 W layer➖1❗ 🦎🐽 forward_values layer➖1❗❗ dmul❗ ➡️  back_mul
@@ -134,27 +124,9 @@
               🦈 back_mul❗ ➡️ 🖍 dmse
 
               💭 Gradient descent parameter update
-              💭😀🔤db: 🔤❗
-              💭📠 db❗
-              💭😀🔤b: 🔤❗
-              💭📠 🐽 b 1❗❗
-              💭😀🔤dW🔤❗
-              💭📠 dW ❗
-              💭😀🔤-----------🔤❗
-              💭😀🔤W 0🔤❗
-              💭📠 🐽 W 0❗❗
-              💭😀🔤-----------🔤❗
-              💭😀🔤W 1🔤❗
-              💭📠 🐽 W 1❗❗
-              💭😀🔤-----------🔤❗
-              💭😀🔤dmse: 🔤❗
-              💭📠 dmse❗
-              💭😀🔤-----------🔤❗
               🍓🐇🍎 🐽 b layer➖1❗ 🥝🐇🍎 db learning_rate❗❗ ➡️ 🐽 b layer➖1❗
               🍓🐇🍎 🐽 W layer➖1❗ 🥝🐇🍎 dW learning_rate❗❗ ➡️ 🐽 W layer➖1❗
 
-              💭😀🔤b: 🔤❗
-              💭📠 🐽 b 1❗❗
            🍉
 
          🍉
@@ -176,14 +148,6 @@
 
       🥐🐇🍎 🍔🐇🍎 X❗dZ❗ ➡️ dW
       🥐🐇🍎 dZ 🍔🐇🍎 W❗❗ ➡️ dX
-
-      💭😀🔤-----------🔤❗
-      💭😀🔤X: 🔤❗
-      💭📠 X❗
-
-      💭😀🔤-----------🔤❗
-      💭😀🔤dZ: 🔤❗
-      💭📠 dZ❗
 
       ↩️ 🆕🦑🆕 dW dX❗
    🍉
@@ -209,6 +173,7 @@
    💭 Returns value type with X and y
    🐇❗ 🦋 filepath🔡  ➡️ 🦑🍇
       🗄 🐇🍎 filepath 👍❗ ➡️ file_array
+
       🍔🐇🍎 file_array❗ ➡️ transposed_array
 
       🥗🐇🍎 transposed_array 🐤 🐇🍎 🐔🍏transposed_array❗❗➖1 ❗ ❗ ➡️ raw_X
@@ -217,13 +182,41 @@
       🍔🐇🍎 raw_X❗ ➡️ transposed_raw_X
       🍔🐇🍎 raw_y❗ ➡️ transposed_raw_y
 
-      💭 Scale the features
+      💭 One-hot encoding of labels
       🔥🐇🍎 transposed_raw_y❗ ➡️ one_hot_y
 
-      💭 One-hot encoding of labels
+      💭 Scale the features
       🥙🐇🍎 transposed_raw_X 1❗ ➡️ scaled_X
 
       ↩️ 🆕🦑🆕 scaled_X one_hot_y❗
+   🍉
+
+   💭 Train-test-split of data
+   🐇❗ 🐅 X🍎 y🍎 train_test_ratio💯 ➡️ 🐲🍇
+      🍏X❗ ➡️ 🖍  🆕X_list
+      🍏y❗ ➡️ 🖍  🆕y_list
+
+      🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 X_test
+      🆕🍨🐚🍨🐚💯🍆🍆🐸❗️ ➡️ 🖍  🆕 y_test
+
+      🆕🎰🆕 ❗➡️  random_generator
+
+      💭 Take round(train_test_ratio*len(X_list))
+      💭 times random samples and add them to X_test/y_test
+      🔂 i 🆕⏩⏭ 0 🏇train_test_ratio✖️💯🐔X_list❗️❗️❗️ 1❗️ 🍇
+        💭 Pick a random index between 0 and len(X_list)
+        🔢 random_generator 0 🐔X_list❗➖1❗ ➡️ test_index
+
+        💭 Add the X/y from test_index to X_test/y_test
+        🐻 X_test 🐽 X_list test_index❗❗
+        🐻 y_test 🐽 y_list test_index❗❗
+
+        💭 Remove the samples from X_list/y_list
+        🐨 X_list test_index❗️
+        🐨 y_list test_index❗️
+      🍉
+
+      ↩️ 🆕🐲🆕 🆕🍎🆕X_list❗ 🆕🍎🆕X_test❗🆕🍎🆕y_list❗🆕🍎🆕y_test❗❗
    🍉
 
 🍉
@@ -250,6 +243,36 @@
    💭 Getter for 'input'
     ❗🦎 ➡️ 🍎 🍇
       ↩️ input
+    🍉
+🍉
+
+💭 Value type to hold X_train, X_test, y_train, y_test
+🕊 🐲 🍇
+  🖍🆕 X_train 🍎
+  🖍🆕 X_test 🍎
+  🖍🆕 y_train 🍎
+  🖍🆕 y_test 🍎
+
+   🆕 🍼 X_train 🍎 🍼 X_test 🍎 🍼 y_train 🍎 🍼 y_test 🍎 🍇🍉
+
+   💭 Getter for 'X_train'
+   ❗🐏 ➡️ 🍎 🍇
+      ↩️ X_train
+    🍉
+
+   💭 Getter for 'X_test'
+   ❗🐑 ➡️ 🍎 🍇
+       ↩️ X_test
+     🍉
+
+   💭 Getter for 'y_train'
+    ❗🐫 ➡️ 🍎 🍇
+      ↩️ y_train
+    🍉
+
+   💭 Getter for 'y_test'
+    ❗🐪 ➡️ 🍎 🍇
+      ↩️ y_test
     🍉
 🍉
 

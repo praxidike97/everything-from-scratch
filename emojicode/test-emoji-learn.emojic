@@ -53,9 +53,11 @@
 
   🆕🕸🆕 🍨 4 8 3🍆 ❗➡️ neural_net_iris
 
+  💭🔜
   😀 🔤 Train the neural net:🔤 ❗
   🦄 neural_net_iris X_iris y_iris 100 0.1❗
   😀 🔤 -----------------------------🔤 ❗
+  🔚💭
 
   💭 Make predictions
 
@@ -70,5 +72,19 @@
   😀 🔤 Prediction sample class 2:🔤 ❗
   📠 🦕 neural_net_iris 🥫🐇🍎 X_iris 141❗❗❗
   😀 🔤 -----------------------------🔤 ❗
+
+  😀 🔤 Train-test-split🔤 ❗
+  🦋🐇🕸 🔤testfile.txt🔤❗ ➡️ toy_data
+  🐬 toy_data❗ ➡️ X_toy
+  🦈 toy_data❗ ➡️ y_toy
+
+  🐅🐇🕸 X_toy y_toy 0.333❗ ➡️ train_test_data
+  🐏 train_test_data❗ ➡️ X_train
+  🐑 train_test_data❗ ➡️ X_test
+  🐫 train_test_data❗ ➡️ y_train
+  🐪 train_test_data❗ ➡️ y_test
+
+  😀 🔤 -----------------------------🔤 ❗
+
 
 🍉
