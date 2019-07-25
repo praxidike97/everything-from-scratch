@@ -166,8 +166,12 @@
    🥗 🐇🍎 array04 🍨0 2🍆❗ ➡️ subset_array
    📠 subset_array❗
 
-   💭 Tests for emoji-learn
+   😀 🔤 Index of max element in list:🔤 ❗
+   🐶🐇🍎 🍨4.0 3.0 2.0 10.0🍆 ❗ ➡️ index
+   😀 🔡index 10❗❗
 
+   💭 Tests for emoji-learn
+   💭🔜
    😀 🔤 Create neural net:🔤 ❗
    🆕🕸🆕 🍨 3 5 4🍆 ❗➡️ neural_net
    😀 🔤 Successful!🔤 ❗
@@ -189,6 +193,6 @@
    😀 🔤 Make prediction of trained neural net:🔤 ❗
    📠 🦕 neural_net02 array06❗❗
    😀 🔤 -----------------------------🔤 ❗
-
+   🔚💭
 
 🍉

@@ -264,6 +264,17 @@
       ↩️ list
    🍉
 
+   💭 Returns the index of the maximum element
+   🐇❗ 🐶 list 🍨🐚💯🍆 ➡️ 🔢🍇
+      0 ➡️ 🖍  🆕 max_index
+      🔂 i 🆕 ⏩⏩ 0 🐔list ❗❗🍇
+         ↪️ 🐽 list i❗ ▶ 🐽 list max_index❗ 🍇
+           i ➡️ 🖍 max_index
+         🍉
+      🍉
+      ↩️ max_index
+   🍉
+
    💭 Read vector/matrix from file
    💭 If header is true the first line is skipped
    🐇❗ 🗄 filePath🔡  header👌 ➡️ 🍎 🍇

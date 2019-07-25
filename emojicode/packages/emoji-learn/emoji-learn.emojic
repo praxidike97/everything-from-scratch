@@ -58,6 +58,26 @@
       ↩️ 🍔🐇🍎 input❗
    🍉
 
+   💭 Calculate accuracy of prediction
+   ❗ 🦍 X_test🍎 y_test🍎 ➡️ 💯🍇
+       0 ➡️🖍 🆕 num_right_samples
+
+       🔂 i 🆕 ⏩⏩ 0 🐔🍏X_test❗❗❗🍇
+
+          💭 Make prediction for i-th sample
+          🦕🐕 🥫🐇🍎X_test i❗❗ ➡️ prediction
+
+          🐽 🍏🥫🐇🍎y_test i❗❗0❗ ➡️ y_test_list
+          🐽 🍏 🍔🐇🍎prediction❗❗ 0❗ ➡️ prediction_list
+
+          ↪️ 🐶🐇🍎prediction_list❗ 🙌 🐶🐇🍎y_test_list❗🍇
+             num_right_samples ➕ 1 ➡️🖍 num_right_samples
+          🍉
+       🍉
+       💭😀 🔤Test03🔤❗
+       ↩️ 💯 num_right_samples❗ ➗ 💯 🐔🍏X_test❗❗❗
+   🍉
+
    💭 Train the net
    ❗🦄 X🍎 y🍎 epochs🔢 learning_rate💯 🍇
       🍏 X❗ ➡️ X_array
