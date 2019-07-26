@@ -1,3 +1,3 @@
-# everything-from-scratch
+# Neural Network Polyglot
 
-Deep Learning from scratch, because why not??
+The goal of this project is to 
