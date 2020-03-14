@@ -32,7 +32,7 @@ episodes = range(0, 50)
 X_train, X_test, y_train, y_test = get_mnist_dataset()
 print(X_train[2])
 print(y_train[2])
-net = NeuralNetwork([784, 1024, 10], LogisticFunction.logistic_function, 0.001, batch_size=512)
+net = NeuralNetwork([784, 1024, 10], LogisticFunction.function, 0.001, batch_size=512)
 
 for e in tqdm(episodes):
     net.train(X_train, y_train)

@@ -78,14 +78,14 @@ class NeuralNetwork:
 
                 # 2. Compute the error for the last layer
                 cost_derivative_final_layer = MSE.mse_derivative(self.layers[-1].output, y)
-                activation_derivative_final_layer = LogisticFunction.logistic_function_derivative(self.layers[-1].summed_input)
+                activation_derivative_final_layer = LogisticFunction.function_derivative(self.layers[-1].summed_input)
                 self.layers[-1].delta = np.multiply(cost_derivative_final_layer, activation_derivative_final_layer)
                 self.layers[-1].stored_delta.append(np.multiply(cost_derivative_final_layer, activation_derivative_final_layer))
 
                 # 3. Compute the error for all the other layers
                 for i in range(2, len(self.layers)):
                     weighted_error = np.dot(self.layers[-i+1].weights.T, self.layers[-i+1].delta)
-                    activation_derivative = LogisticFunction.logistic_function_derivative(self.layers[-i].summed_input)
+                    activation_derivative = LogisticFunction.function_derivative(self.layers[-i].summed_input)
                     self.layers[-i].stored_delta.append(np.multiply(weighted_error, activation_derivative))
                     self.layers[-i].delta = np.multiply(weighted_error, activation_derivative)
 
